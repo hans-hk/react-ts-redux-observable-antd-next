@@ -1,8 +1,11 @@
 import React from 'react';
+import {TodosContextProvider} from '../contexts/TodosContext';
 import Counter from './Counter';
 import Greetings from './Greetings';
 import MyForm from './MyForm';
 import ReducerCounter from './ReducerCounter';
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 
 const App: React.FC = () => {
   const onClick = (name: string) => {
@@ -20,6 +23,11 @@ const App: React.FC = () => {
       <Counter/>
       <ReducerCounter/>
       <MyForm onSubmit={onSubmit}/>
+      <hr/>
+      <TodosContextProvider>
+        <TodoForm/>
+        <TodoList/>
+      </TodosContextProvider>
     </div>
   );
 };
