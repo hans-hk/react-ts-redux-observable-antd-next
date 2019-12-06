@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import {useTodosDispatch} from '../contexts/TodosContext';
 
-function TodoForm() {
+type TodoFormDefaultProps = {
+  name: string;
+  mark: string;
+}
+
+function TodoForm({name, mark}: TodoFormDefaultProps) {
   const [value, setValue] = useState('');
   const dispatch = useTodosDispatch();
   const onSubmit = (e: React.FormEvent) => {
@@ -15,6 +20,7 @@ function TodoForm() {
 
   return (
     <form onSubmit={onSubmit}>
+      ohmyod {name} {mark}
       <input value={value}
              placeholder={'무엇을 하실 건가용'}
              onChange={e => setValue(e.target.value)}/>
@@ -22,5 +28,10 @@ function TodoForm() {
     </form>
   );
 }
+
+TodoForm.defaultProps = {
+  name: 'hans',
+  mark: '!',
+};
 
 export default TodoForm;
