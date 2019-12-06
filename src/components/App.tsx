@@ -5,6 +5,7 @@ import Counter from './Counter';
 import Greetings from './Greetings';
 import MyForm from './MyForm';
 import ReducerCounter from './ReducerCounter';
+import ReduxHookCounter from './ReduxHookCounter';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
@@ -31,6 +32,7 @@ const App: React.FC = () => {
       </TodosContextProvider>
       <hr/>
       <CounterContainer/>
+      <ReduxHookCounter/>
     </div>
   );
 };
