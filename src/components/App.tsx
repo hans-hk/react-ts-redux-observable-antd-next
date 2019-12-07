@@ -3,6 +3,8 @@ import CounterContainer from '../containers/CounterContianer';
 import {TodosContextProvider} from '../contexts/TodosContext';
 import Counter from './Counter';
 import Greetings from './Greetings';
+import HookTodoInsert from './HookTodoInsert';
+import HookTodoList from './HookTodoList';
 import MyForm from './MyForm';
 import ReducerCounter from './ReducerCounter';
 import ReduxHookCounter from './ReduxHookCounter';
@@ -33,6 +35,10 @@ const App: React.FC = () => {
       <hr/>
       <CounterContainer/>
       <ReduxHookCounter/>
+      <hr/>
+      <h2>Hook을 이용한 todo</h2>
+      <HookTodoInsert/>
+      <HookTodoList/>
     </div>
   );
 };

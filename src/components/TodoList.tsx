@@ -29,13 +29,11 @@ function Counter() {
         <button onClick={onIncrease}>+1</button>
         <button onClick={onDecrease}>-1</button>
       </div>
-      <hr/>
       <h1>reducerCount: {reducerCount}</h1>
       <div>
         <button onClick={onReducerIncrease}>+1</button>
         <button onClick={onReducerDecrease}>-1</button>
       </div>
-      <hr/>
     </div>
   );
 }
