@@ -5,11 +5,14 @@ import Counter from './Counter';
 import Greetings from './Greetings';
 import HookTodoInsert from './HookTodoInsert';
 import HookTodoList from './HookTodoList';
+import TypesafeActionsTodoInsert from './TypesafeActionsTodoInsert';
+import TypesafeActionsTodoList from './TypesafeActionsTodoList';
 import MyForm from './MyForm';
 import ReducerCounter from './ReducerCounter';
 import ReduxHookCounter from './ReduxHookCounter';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
+import TypeSafeActionsReduxHookCounter from './TypesafeActionsReduxHookCounter';
 
 const App: React.FC = () => {
   const onClick = (name: string) => {
@@ -39,6 +42,12 @@ const App: React.FC = () => {
       <h2>Hook을 이용한 todo</h2>
       <HookTodoInsert/>
       <HookTodoList/>
+      <hr/>
+      <TypeSafeActionsReduxHookCounter/>
+      <hr/>
+      <h2>Method Chaining, typesafe-actions 을 이용한 todo</h2>
+      <TypesafeActionsTodoInsert/>
+      <TypesafeActionsTodoList/>
     </div>
   );
 };
