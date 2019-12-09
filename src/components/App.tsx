@@ -5,8 +5,8 @@ import TodoList from './todos/TodoList';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <TodoInsert/>
-      <TodoList/>
+      <TodoInsert />
+      <TodoList />
     </div>
   );
 };

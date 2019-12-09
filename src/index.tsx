@@ -3,11 +3,7 @@ import {render} from 'react-dom';
 import Root from './Root';
 import * as serviceWorker from './serviceWorker';
 
-const renderApp = () =>
-  render(
-    <Root/>,
-    document.getElementById('root'),
-  );
+const renderApp = () => render(<Root />, document.getElementById('root'));
 
 // @ts-ignore
 if (process.env.NODE_ENV !== 'production' && module.hot) {

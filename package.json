@@ -75,7 +75,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lint:fix": "eslint './src/**/*.{ts,tsx}'"
   },
   "browserslist": {
     "production": [
@@ -143,11 +144,10 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "husky": "^3.1.0",
-    "lint-staged": "^10.0.0-beta.7",
+    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1"
   },
   "husky": {
@@ -156,9 +156,8 @@
     }
   },
   "lint-staged": {
-    "*.ts": [
-      "eslint --fix",
-      "git add"
+    "src/**/*.ts?(x)": [
+      "eslint --rule \"no-console: 2\" --rule \"no-debugger: 2\""
     ]
   }
 }

@@ -17,10 +17,8 @@ function TodoInsert() {
 
   return (
     <form onSubmit={onSubmit}>
-      <input value={value}
-             placeholder={'할 일을 입력해주세요.'}
-             onChange={onChange}/>
-      <button type='submit'>등록</button>
+      <input value={value} placeholder={'할 일을 입력해주세요.'} onChange={onChange} />
+      <button type="submit">등록</button>
     </form>
   );
 }

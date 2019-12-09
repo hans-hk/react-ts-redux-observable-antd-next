@@ -1,6 +1,10 @@
 import {AnyAction, Reducer, Store} from 'redux';
 
-type StoreCreator<S> = (reducer: Reducer<S>, initialState: S, enhancer?: StrictStoreEnhancer<S, S>) => Store<S>;
+type StoreCreator<S> = (
+  reducer: Reducer<S>,
+  initialState: S,
+  enhancer?: StrictStoreEnhancer<S, S>,
+) => Store<S>;
 
 type StrictStoreEnhancer<S, R> = (createStore: StoreCreator<S>) => StoreCreator<R>;
 
@@ -26,4 +30,3 @@ const monitorReducersEnhancer = <S>(next: StoreCreator<S>) => (
 };
 
 export default monitorReducersEnhancer;
-

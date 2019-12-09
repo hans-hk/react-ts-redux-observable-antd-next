@@ -1,7 +1,7 @@
 import {applyMiddleware, createStore, Middleware, StoreEnhancer} from 'redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
-import rootReducer from './modules';
-import monitorReducersEnhancer from './modules/enhancers/monitorReducer';
+import rootReducer from '../modules';
+import monitorReducersEnhancer from './enhancers/monitorReducer';
 
 export default function configureStore(preloadState: Object) {
   const middlewares: Middleware[] = [];
@@ -15,7 +15,7 @@ export default function configureStore(preloadState: Object) {
   // @ts-ignore
   if (process.env.NODE_ENV !== 'production' && module.hot) {
     // @ts-ignore
-    module.hot.accept('./modules', () => store.replaceReducer(rootReducer));
+    module.hot.accept('../modules', () => store.replaceReducer(rootReducer));
   }
   return store;
 }

@@ -19,8 +19,7 @@ const todos = createReducer<TodosState, TodosAction>(initialState, {
   },
   [TOGGLE_TODO]: (state, {payload: id}) =>
     state.map(todo => (todo.id === id ? {...todo, done: !todo.done} : todo)),
-  [REMOVE_TODO]: (state, {payload: id}) =>
-    state.filter(todo => todo.id !== id),
+  [REMOVE_TODO]: (state, {payload: id}) => state.filter(todo => todo.id !== id),
 });
 
 export default todos;
