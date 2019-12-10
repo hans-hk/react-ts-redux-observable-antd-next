@@ -1,5 +1,6 @@
+import produce from 'immer';
 import {createReducer} from 'typesafe-actions';
-import {ADD_TODO, REMOVE_TODO, TOGGLE_TODO} from './actions';
+import {ADD_TODO, ADD_TODO_OBJECT, REMOVE_TODO, TOGGLE_TODO} from './actions';
 import {TodosAction, TodosState} from './types';
 
 // 초깃값 설정
@@ -10,11 +11,20 @@ const initialState: TodosState = [
 ];
 
 const todos = createReducer<TodosState, TodosAction>(initialState, {
-  [ADD_TODO]: (state, {payload: text}) => {
+  [ADD_TODO]: (state, action) => {
+    const {payload: text} = action;
     return state.concat({
       id: Math.max(...state.map(todo => todo.id), 0) + 1,
       text,
       done: false,
+    });
+  },
+  [ADD_TODO_OBJECT]: (state, action) => {
+    return produce(state, (draft: TodosState) => {
+      draft.push({
+        id: Math.max(...state.map(todo => todo.id), 0) + 1,
+        ...action.payload,
+      });
     });
   },
   [TOGGLE_TODO]: (state, {payload: id}) =>
