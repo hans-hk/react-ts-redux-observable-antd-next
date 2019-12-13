@@ -1,15 +1,14 @@
 import React from 'react';
-import TodoInsert from './todos/TodoInsert';
-import TodoList from './todos/TodoList';
-import TodoObjectInsert from './todos/TodoObjectInsert';
+import {Route, Switch} from 'react-router-dom';
+import MainPage from '../pages/MainPage';
+import TodoPage from '../pages/TodoPage';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <TodoInsert />
-      <TodoObjectInsert />
-      <TodoList />
-    </div>
+    <Switch>
+      <Route exact path="/" component={MainPage} />
+      <Route path="/todo" component={TodoPage} />
+    </Switch>
   );
 };
 
