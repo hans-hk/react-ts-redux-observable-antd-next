@@ -1,5 +1,6 @@
 import {Icon, Layout, Menu} from 'antd';
 import React from 'react';
+import useHansbar from '../../../libs/hansbar/useHansbar';
 
 const {SubMenu} = Menu;
 const {Sider} = Layout;
@@ -9,6 +10,8 @@ type MainSideMenuProps = {
 };
 
 function MainSideMenu({children}: MainSideMenuProps) {
+  const [value, setValue] = useHansbar();
+
   return (
     <Layout>
       <Sider
@@ -33,7 +36,14 @@ function MainSideMenu({children}: MainSideMenuProps) {
               </span>
             }
           >
-            <Menu.Item key="1">option1</Menu.Item>
+            <Menu.Item
+              key="1"
+              onClick={() => {
+                setValue(100);
+              }}
+            >
+              hansbar 100%
+            </Menu.Item>
             <Menu.Item key="2">option2</Menu.Item>
             <Menu.Item key="3">option3</Menu.Item>
             <Menu.Item key="4">option4</Menu.Item>
