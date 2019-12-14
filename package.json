@@ -81,7 +81,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "lint:fix": "eslint './src/**/*.{ts,tsx}'"
+    "lint:fix": "eslint './src/**/*.{ts,tsx}'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "browserslist": {
     "production": [
@@ -167,6 +169,12 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-knobs": "^5.2.8",
+    "@storybook/addon-links": "^5.2.8",
+    "@storybook/addons": "^5.2.8",
+    "@storybook/react": "^5.2.8",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-styled-components": "^1.10.6",
     "eslint-config-prettier": "^6.7.0",
