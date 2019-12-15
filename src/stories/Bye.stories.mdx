@@ -1,0 +1,19 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+import MyComponent from '../components/MyComponent';
+
+<Meta title="components|basic/Bye" component={MyComponent} decorators={[withKnobs]} />
+
+# Button
+
+<Preview>
+  <Story name="Default">
+    <MyComponent name={text('name', 'stories.js')} />
+  </Story>
+</Preview>
+
+## Props
+
+<Props of={MyComponent} />
+
+**markdown bold**
