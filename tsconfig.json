@@ -6,7 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "typeRoots":  [
+    "typeRoots": [
       "./types",
       "./node_modules/@types"
     ],
@@ -21,7 +21,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "preserve"
   },
   "include": [
     "./src/**/*"
