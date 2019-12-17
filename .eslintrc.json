@@ -1,0 +1,21 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "react-app",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-debugger": "warn"
+  }
+}
